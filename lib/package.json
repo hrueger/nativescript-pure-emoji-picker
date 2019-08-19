@@ -1,0 +1,32 @@
+{
+    "name": "nativescript-emoji-picker",
+    "version": "0.1.0",
+    "description": "There are many emoji pickers for angular and the web, but no one for NativeScript?! Let's change this!",
+    "license": "See license in LICENSE",
+    "readme": "See readme in README.md",
+    "repository": "https://github.com/hrueger/nativescript-emoji-picker",
+    "nativescript": {
+        "platforms": {
+            "android": "6.0.0",
+            "ios": "6.0.1"
+        }
+    },
+    "author": "H. Rüger",
+    "private": false,
+    "peerDependencies": {
+        "@angular/core": ">=6.0.0",
+        "@angular/common": ">=6.0.0"
+    },
+    "dependencies": {
+        "nativescript-ui-listview": "7.0.2",
+        "node-sass": "4.12.0",
+        "fontawesome": "5.6.3"
+    },
+    "ngPackage": {
+        "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+        "lib": {
+            "entryFile": "src/public_api.ts"
+        },
+        "dest": "../dist/"
+    }
+}
