@@ -18,9 +18,10 @@
         </ng-container>
     </TabView>
     <GridLayout class="bottom-bar" row="1" rows="35" columns="*, *, *">
-        <Label class="icon fas" (tap)="toggleSearch()" horizontalAlignment="left" row="0" col="0" text="&#xf002;"></Label>
-        <Label class="icon fas" (tap)="changeViewTo('emojis')" horizontalAlignment="center" row="0" col="1" text="&#xf580;"></Label>
-        <Label class="icon fas" (tap)="backspace()" horizontalAlignment="right" row="0" col="2" text="&#xf55a;"></Label>
+        <Image (tap)="toggleSearch()" horizontalAlignment="left" row="0" col="0" src="~/assets/emoji-picker-icons/search.png"></Image>
+        <Image (tap)="changeViewTo('emojis')" horizontalAlignment="center" row="0" col="1" src="~/assets/emoji-picker-icons/people.png"></Image>
+        <Image (tap)="backspace()" horizontalAlignment="right" row="0" col="2" src="~/assets/emoji-picker-icons/back.png"></Image>
+
     </GridLayout>
 </GridLayout>
 <GridLayout rows="auto, * auto" columns="auto, auto" visibility="{{ showEmojiPicker && showSearch ? 'visible' : 'collapsed' }}" class="emoji-search-container">
@@ -30,8 +31,8 @@
             <Image class="emoji" (tap)="onEmojiClick(emoji)" [src]="getImgSrc(emoji)"></Image>
         </ng-template>
     </RadListView>
-    <Label class="icon fas" (tap)="toggleSearch()" row="1" col="0" text="&#xf060;"></Label>
-    <TextField hint="Emoji Suchen" text="Ganz viel text, info, info, info..." returnKeyType="search" row="1" col="1">
+    <Image (tap)="toggleSearch()" row="1" col="0" src="~/assets/emoji-picker-icons/back.png"></Image>
+    <TextField hint="Emoji Suchen" text="Ganz viel text" returnKeyType="search" row="1" col="1">
     </TextField>
-    <Label class="icon fas" (tap)="clearSearch()" row="1" col="2" text="&#xf00d;"></Label>
+    <Image (tap)="clearSearch()" row="1" col="2" src="~/assets/emoji-picker-icons/clear.png"></Image>
 </GridLayout>

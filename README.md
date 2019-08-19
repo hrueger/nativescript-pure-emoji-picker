@@ -6,33 +6,12 @@ There are many emoji pickers for angular and the web, but no one for NativeScrip
 
 As this plugin is currently in developement screenshots will be added later this year.
 
-## Requirements
+## Limitations
 
-- Angular
-
+- Angular needed
 This plugin currently only works in an Angular NativeScript project. Feel free to clone this repo and port it to JavaScript!
-
-## Preperation
-
-### Install and configure fontawesome
-1. Go [here](https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself) and download the latest version
-2. Copy **all .ttf files** from `fontawesome-free/web-fonts-with-css/webfonts` to `app/fonts` (create folder if it doesn't exist)
-3. Add this to your `app/app.css`:
-```css
-.far {
-    font-family: 'Font Awesome 5 Free', fa-regular-400;
-}
-
-.fab {
-    font-family: 'Font Awesome 5 Brands', fa-brands-400;
-}
-
-.fas {
-    font-family: 'Font Awesome 5 Free Solid', fa-solid-900;
-}
-```
-
-
+- Search not implemented yet
+- Skins not implemented yet
 
 ## Installation
 
