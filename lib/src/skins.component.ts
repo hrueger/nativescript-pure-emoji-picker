@@ -4,12 +4,12 @@ import {
   EventEmitter,
   Input,
   Output,
-} from '@angular/core';
-import { Emoji } from './emoji.model';
-
+} from "@angular/core";
+import { IEmoji } from "./emoji.model";
 
 @Component({
-  selector: 'emoji-skins',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: "emoji-skins",
   template: `
     <StackLayout
       class="emoji-mart-skin-swatches"
@@ -37,42 +37,42 @@ import { Emoji } from './emoji.model';
       </Label>
     </StackLayout>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+
   preserveWhitespaces: false,
 })
 export class SkinComponent {
   /** currently selected skin */
-  @Input() skin?: Emoji['skin'];
-  @Input() i18n: any;
-  @Output() changeSkin = new EventEmitter<number>();
-  opened = false;
-  skinTones = [1, 2, 3, 4, 5, 6];
+  @Input() public skin?: IEmoji["skin"];
+  @Input() public i18n: any;
+  @Output() public changeSkin = new EventEmitter<number>();
+  public opened = false;
+  public skinTones = [1, 2, 3, 4, 5, 6];
 
-  toggleOpen() {
+  public toggleOpen() {
     this.opened = !this.opened;
   }
 
-  isSelected(skinTone: Emoji['skin']): boolean {
+  public isSelected(skinTone: IEmoji["skin"]): boolean {
     return skinTone === this.skin;
   }
 
-  isVisible(skinTone: Emoji['skin']): boolean {
+  public isVisible(skinTone: IEmoji["skin"]): boolean {
     return this.opened || this.isSelected(skinTone);
   }
 
-  pressed(skinTone: Emoji['skin']) {
-    return this.opened ? !!this.isSelected(skinTone) : '';
+  public pressed(skinTone: IEmoji["skin"]) {
+    return this.opened ? !!this.isSelected(skinTone) : "";
   }
 
-  tabIndex(skinTone: Emoji['skin']) {
-    return this.isVisible(skinTone) ? '0' : '';
+  public tabIndex(skinTone: IEmoji["skin"]) {
+    return this.isVisible(skinTone) ? "0" : "";
   }
 
-  expanded(skinTone: Emoji['skin']) {
-    return this.isSelected(skinTone) ? this.opened : '';
+  public expanded(skinTone: IEmoji["skin"]) {
+    return this.isSelected(skinTone) ? this.opened : "";
   }
 
-  handleClick(skin: number) {
+  public handleClick(skin: number) {
     if (!this.opened) {
       this.opened = true;
       return;

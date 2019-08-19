@@ -20,7 +20,8 @@
         "ios": "tns run ios",
         "debug.ios": "tns debug ios",
         "android": "tns run android",
-        "debug.android": "tns debug android"
+        "debug.android": "tns debug android",
+        "tslint": "tslint -p tsconfig.json"
     },
     "dependencies": {
         "@angular/animations": "~8.1.3",
@@ -46,6 +47,7 @@
         "ng-packagr": "^5.5.0",
         "typescript": "3.4.5",
         "nativescript-dev-webpack": "~1.0.0",
-        "@ngtools/webpack": "8.0.0"
+        "@ngtools/webpack": "8.0.0",
+        "tslint": "^5.4.2"
     }
 }

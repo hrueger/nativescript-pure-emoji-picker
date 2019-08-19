@@ -1,6 +1,6 @@
-import { Emoji } from '../emoji.model';
+import { IEmoji } from "../emoji.model";
 
-export interface EmojiCategory {
+export interface IEmojiCategory {
   id: string;
   name: string;
   emojis: any[] | null;
@@ -8,7 +8,7 @@ export interface EmojiCategory {
   first?: boolean;
 }
 
-export interface CompressedEmojiData {
+export interface ICompressedEmojiData {
   name: string;
   unified: string;
   shortName: string;
@@ -18,12 +18,12 @@ export interface CompressedEmojiData {
   hidden?: string[];
   emoticons?: string[];
   text?: string;
-  skinVariations?: EmojiVariation[];
+  skinVariations?: IEmojiVariation[];
   obsoletedBy?: string;
   obsoletes?: string;
 }
 
-export interface EmojiData {
+export interface IEmojiData {
   id: string;
   name: string;
   unified?: string;
@@ -34,27 +34,27 @@ export interface EmojiData {
   hidden: string[];
   emoticons: string[];
   text: string;
-  set?: Emoji['set'];
-  skinVariations: EmojiVariation[];
+  set?: IEmoji["set"];
+  skinVariations: IEmojiVariation[];
   obsoletedBy?: string;
   obsoletes?: string;
-  skinTone?: Emoji['skin'];
+  skinTone?: IEmoji["skin"];
   custom?: boolean;
   native?: string;
   imageUrl?: string;
   colons?: string;
-  skin?: Emoji['skin'];
+  skin?: IEmoji["skin"];
   spriteUrl?: string;
   sheetRows?: string;
 }
 
-export interface EmojiVariation {
+export interface IEmojiVariation {
   unified: string;
   sheet: [number, number];
   hidden?: string[];
 }
 
-export interface SkinData {
+export interface ISkinData {
   name: string;
   unified: string;
   shortName: string;

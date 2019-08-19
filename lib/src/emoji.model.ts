@@ -1,10 +1,10 @@
 import {
   EventEmitter,
-} from '@angular/core';
+} from "@angular/core";
 
-import { EmojiData } from './data/data.interfaces';
+import { IEmojiData } from "./data/data.interfaces";
 
-export interface Emoji {
+export interface IEmoji {
   /** Renders the native unicode emoji */
   isNative: boolean;
   forceSize: boolean;
@@ -12,23 +12,23 @@ export interface Emoji {
   skin: 1 | 2 | 3 | 4 | 5 | 6;
   sheetSize: 16 | 20 | 32 | 64;
   set:
-  | 'apple'
-  | 'google'
-  | 'twitter'
-  | 'emojione'
-  | 'messenger'
-  | 'facebook'
-  | '';
+  | "apple"
+  | "google"
+  | "twitter"
+  | "emojione"
+  | "messenger"
+  | "facebook"
+  | "";
   size: number;
-  emoji: string | EmojiData;
+  emoji: string | IEmojiData;
   backgroundImageFn: (set: string, sheetSize: number) => string;
   fallback?: (data: any, props: any) => string;
-  emojiOver: EventEmitter<EmojiEvent>;
-  emojiLeave: EventEmitter<EmojiEvent>;
-  emojiClick: EventEmitter<EmojiEvent>;
+  emojiOver: EventEmitter<IEmojiEvent>;
+  emojiLeave: EventEmitter<IEmojiEvent>;
+  emojiClick: EventEmitter<IEmojiEvent>;
 }
 
-export interface EmojiEvent {
-  emoji: EmojiData;
+export interface IEmojiEvent {
+  emoji: IEmojiData;
   $event: Event;
 }

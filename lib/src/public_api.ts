@@ -1,1 +1,1 @@
-export * from './picker.module';
+export * from "./picker.module";

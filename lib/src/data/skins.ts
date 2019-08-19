@@ -1,38 +1,38 @@
-import { SkinData } from './data.interfaces';
-export const skins: SkinData[] = [
+import { ISkinData } from "./data.interfaces";
+export const skins: ISkinData[] = [
   {
-    name: 'Emoji Modifier Fitzpatrick Type-1-2',
-    unified: '1F3FB',
+    hidden: ["messenger"],
+    name: "Emoji Modifier Fitzpatrick Type-1-2",
     sheet: [12, 25],
-    hidden: ['messenger'],
-    shortName: 'skin-tone-2'
+    shortName: "skin-tone-2",
+    unified: "1F3FB",
   },
   {
-    name: 'Emoji Modifier Fitzpatrick Type-3',
-    unified: '1F3FC',
+    hidden: ["messenger"],
+    name: "Emoji Modifier Fitzpatrick Type-3",
     sheet: [12, 26],
-    hidden: ['messenger'],
-    shortName: 'skin-tone-3'
+    shortName: "skin-tone-3",
+    unified: "1F3FC",
   },
   {
-    name: 'Emoji Modifier Fitzpatrick Type-4',
-    unified: '1F3FD',
+    hidden: ["messenger"],
+    name: "Emoji Modifier Fitzpatrick Type-4",
     sheet: [12, 27],
-    hidden: ['messenger'],
-    shortName: 'skin-tone-4'
+    shortName: "skin-tone-4",
+    unified: "1F3FD",
   },
   {
-    name: 'Emoji Modifier Fitzpatrick Type-5',
-    unified: '1F3FE',
+    hidden: ["messenger"],
+    name: "Emoji Modifier Fitzpatrick Type-5",
     sheet: [12, 28],
-    hidden: ['messenger'],
-    shortName: 'skin-tone-5'
+    shortName: "skin-tone-5",
+    unified: "1F3FE",
   },
   {
-    name: 'Emoji Modifier Fitzpatrick Type-6',
-    unified: '1F3FF',
+    hidden: ["messenger"],
+    name: "Emoji Modifier Fitzpatrick Type-6",
     sheet: [12, 29],
-    hidden: ['messenger'],
-    shortName: 'skin-tone-6'
-  }
+    shortName: "skin-tone-6",
+    unified: "1F3FF",
+  },
 ];

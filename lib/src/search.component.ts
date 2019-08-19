@@ -7,9 +7,9 @@ import {
   OnInit,
   Output,
   ViewChild,
-} from '@angular/core';
+} from "@angular/core";
 
-import { EmojiSearch } from './emoji-search.service';
+import { EmojiSearch } from "./emoji-search.service";
 
 let id = 0;
 
@@ -50,55 +50,56 @@ let id = 0;
 */
 
 @Component({
-  selector: 'emoji-search',
+  preserveWhitespaces: false,
+  selector: "emoji-search",
   template: `
     <StackLayout class="emoji-mart-search">
       <Label tet="Search"></Label>
     </StackLayout>
   `,
-  preserveWhitespaces: false,
+
 })
 export class SearchComponent implements AfterViewInit, OnInit {
-  @Input() maxResults = 75;
-  @Input() autoFocus = false;
-  @Input() i18n: any;
-  @Input() include: string[] = [];
-  @Input() exclude: string[] = [];
-  @Input() custom: any[] = [];
-  @Input() icons?: { [key: string]: string };
-  @Input() emojisToShowFilter?: (x: any) => boolean;
-  @Output() searchResults = new EventEmitter<any[]>();
-  @Output() enterKey = new EventEmitter<any>();
-  @ViewChild('inputRef', { static: true }) private inputRef!: ElementRef;
-  isSearching = false;
-  icon?: string;
-  query = '';
-  inputId = `emoji-mart-search-${++id}`;
+  @Input() public maxResults = 75;
+  @Input() public autoFocus = false;
+  @Input() public i18n: any;
+  @Input() public include: string[] = [];
+  @Input() public exclude: string[] = [];
+  @Input() public custom: any[] = [];
+  @Input() public icons?: { [key: string]: string };
+  @Input() public emojisToShowFilter?: (x: any) => boolean;
+  @Output() public searchResults = new EventEmitter<any[]>();
+  @Output() public enterKey = new EventEmitter<any>();
+  public isSearching = false;
+  public icon?: string;
+  public query = "";
+  public inputId = `emoji-mart-search-${++id}`;
+  @ViewChild("inputRef", { static: true }) private inputRef!: ElementRef;
 
   constructor(private emojiSearch: EmojiSearch) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.icon = this.icons.search;
   }
-  ngAfterViewInit() {
+  public ngAfterViewInit() {
     if (this.autoFocus) {
       this.inputRef.nativeElement.focus();
     }
   }
-  clear() {
-    this.query = '';
-    this.handleSearch('');
+  public clear() {
+    this.query = "";
+    this.handleSearch("");
     this.inputRef.nativeElement.focus();
   }
-  handleEnterKey($event: Event) {
+  public handleEnterKey($event: Event) {
     if (!this.query) {
       return;
     }
     this.enterKey.emit($event);
     $event.preventDefault();
   }
-  handleSearch(value: string) {
-    if (value === '') {
+  public handleSearch(value: string) {
+    if (value === "") {
       this.icon = this.icons.search;
       this.isSearching = false;
     } else {
@@ -115,7 +116,7 @@ export class SearchComponent implements AfterViewInit, OnInit {
     );
     this.searchResults.emit(emojis);
   }
-  handleChange() {
+  public handleChange() {
     this.handleSearch(this.query);
   }
 }

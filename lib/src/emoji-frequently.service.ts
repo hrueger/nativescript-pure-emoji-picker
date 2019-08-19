@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import * as appSettings from "tns-core-modules/application-settings";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class EmojiFrequentlyService {
-  NAMESPACE = 'emoji-mart';
-  frequently: { [key: string]: number } | null = null;
-  defaults: { [key: string]: number } = {};
-  initialized = false;
-  DEFAULTS = ["1f44d", "1f60e", "1f605", "1f602", "1f600"];
+  public NAMESPACE = "emoji-mart";
+  public frequently: { [key: string]: number } | null = null;
+  public defaults: { [key: string]: number } = {};
+  public initialized = false;
+  public DEFAULTS = ["1f44d", "1f60e", "1f605", "1f602", "1f600"];
 
-  init() {
-    this.frequently = JSON.parse(appSettings.getString(`${this.NAMESPACE}.frequently`) || 'null');
+  public init() {
+    this.frequently = JSON.parse(appSettings.getString(`${this.NAMESPACE}.frequently`) || "null");
     this.initialized = true;
   }
-  add(emojiId: string) {
+  public add(emojiId: string) {
     if (!this.initialized) {
       this.init();
     }
@@ -28,7 +28,7 @@ export class EmojiFrequentlyService {
     appSettings.setString(`${this.NAMESPACE}.last`, emojiId);
     appSettings.setString(`${this.NAMESPACE}.frequently`, JSON.stringify(this.frequently));
   }
-  get(quantity: number) {
+  public get(quantity: number) {
     if (!this.initialized) {
       this.init();
     }
@@ -42,7 +42,6 @@ export class EmojiFrequentlyService {
       }
       return result;
     }
-
 
     const frequentlyKeys = Object.keys(this.frequently);
 

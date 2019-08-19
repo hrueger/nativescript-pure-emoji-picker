@@ -1,25 +1,25 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 import {
-  CompressedEmojiData,
-  EmojiData,
-  EmojiVariation,
-} from './data/data.interfaces';
-import { emojis } from './data/emojis';
-import { Emoji } from './emoji.model';
+  ICompressedEmojiData,
+  IEmojiData,
+  IEmojiVariation,
+} from "./data/data.interfaces";
+import { emojis } from "./data/emojis";
+import { IEmoji } from "./emoji.model";
 
 const COLONS_REGEX = /^(?:\:([^\:]+)\:)(?:\:skin-tone-(\d)\:)?$/;
-const SKINS = ['1F3FA', '1F3FB', '1F3FC', '1F3FD', '1F3FE', '1F3FF'];
+const SKINS = ["1F3FA", "1F3FB", "1F3FC", "1F3FD", "1F3FE", "1F3FF"];
 export const DEFAULT_BACKGROUNDFN = (
   set: string,
   sheetSize: number,
-) => "~/assets/emojis_apple_64.png";//`https://unpkg.com/emoji-datasource-${set}@4.0.4/img/${set}/sheets-256/${sheetSize}.png`;
+) => "~/assets/emojis_apple_64.png";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class EmojiService {
-  uncompressed = false;
-  names: { [key: string]: EmojiData } = {};
-  emojis: EmojiData[] = [];
+  public uncompressed = false;
+  public names: { [key: string]: IEmojiData } = {};
+  public emojis: IEmojiData[] = [];
 
   constructor() {
     if (!this.uncompressed) {
@@ -28,8 +28,8 @@ export class EmojiService {
     }
   }
 
-  uncompress(list: CompressedEmojiData[]) {
-    this.emojis = list.map(emoji => {
+  public uncompress(list: ICompressedEmojiData[]) {
+    this.emojis = list.map((emoji) => {
       const data: any = { ...emoji };
       if (!data.shortNames) {
         data.shortNames = [];
@@ -55,12 +55,12 @@ export class EmojiService {
       }
 
       if (!data.text) {
-        data.text = '';
+        data.text = "";
       }
 
       if (data.obsoletes) {
         // get keywords from emoji that it obsoletes since that is shared
-        const f = list.find(x => x.unified === data.obsoletes);
+        const f = list.find((x) => x.unified === data.obsoletes);
         if (f) {
           if (f.keywords) {
             data.keywords = [...data.keywords, ...f.keywords, f.shortName];
@@ -78,21 +78,21 @@ export class EmojiService {
     });
   }
 
-  getData(
-    emoji: EmojiData | string,
-    skin?: Emoji['skin'],
-    set?: Emoji['set'],
-  ): EmojiData | null {
+  public getData(
+    emoji: IEmojiData | string,
+    skin?: IEmoji["skin"],
+    set?: IEmoji["set"],
+  ): IEmojiData | null {
     let emojiData: any;
 
-    if (typeof emoji === 'string') {
+    if (typeof emoji === "string") {
       const matches = emoji.match(COLONS_REGEX);
 
       if (matches) {
         emoji = matches[1];
 
         if (matches[2]) {
-          skin = parseInt(matches[2], 10) as Emoji['skin'];
+          skin = parseInt(matches[2], 10) as IEmoji["skin"];
         }
       }
       if (this.names.hasOwnProperty(emoji)) {
@@ -116,7 +116,7 @@ export class EmojiService {
       emojiData = { ...emojiData };
 
       const skinKey = SKINS[skin - 1];
-      const variationData = emojiData.skinVariations.find((n: EmojiVariation) =>
+      const variationData = emojiData.skinVariations.find((n: IEmojiVariation) =>
         n.unified.includes(skinKey),
       );
 
@@ -127,40 +127,40 @@ export class EmojiService {
       emojiData.native = this.unifiedToNative(emojiData.unified);
     }
 
-    emojiData.set = set || '';
-    return emojiData as EmojiData;
+    emojiData.set = set || "";
+    return emojiData as IEmojiData;
   }
 
-  unifiedToNative(unified: string) {
-    const codePoints = unified.split('-').map(u => parseInt(`0x${u}`, 16));
+  public unifiedToNative(unified: string) {
+    const codePoints = unified.split("-").map((u) => parseInt(`0x${u}`, 16));
     return String.fromCodePoint(...codePoints);
   }
 
-  emojiSpriteStyles(
-    sheet: EmojiData['sheet'],
-    set: Emoji['set'] = 'apple',
-    size: Emoji['size'] = 24,
-    sheetSize: Emoji['sheetSize'] = 64,
-    backgroundImageFn: Emoji['backgroundImageFn'] = DEFAULT_BACKGROUNDFN,
+  public emojiSpriteStyles(
+    sheet: IEmojiData["sheet"],
+    set: IEmoji["set"] = "apple",
+    size: IEmoji["size"] = 24,
+    sheetSize: IEmoji["sheetSize"] = 64,
+    backgroundImageFn: IEmoji["backgroundImageFn"] = DEFAULT_BACKGROUNDFN,
     sheetColumns = 52,
   ) {
     return {
-      width: `${size}px`,
-      height: `${size}px`,
-      display: 'inline-block',
-      'background-image': `url("${backgroundImageFn(set, sheetSize)}")`,
-      'background-size': `${100 * sheetColumns}%`,
-      'background-position': this.getSpritePosition(sheet, sheetColumns),
+      "background-image": `url("${backgroundImageFn(set, sheetSize)}")`,
+      "background-position": this.getSpritePosition(sheet, sheetColumns),
+      "background-size": `${100 * sheetColumns}%`,
+      "display": "inline-block",
+      "height": `${size}px`,
+      "width": `${size}px`,
     };
   }
 
-  getSpritePosition(sheet: EmojiData['sheet'], sheetColumns: number) {
+  public getSpritePosition(sheet: IEmojiData["sheet"], sheetColumns: number) {
     const [sheetX, sheetY] = sheet;
     const multiply = 100 / (sheetColumns - 1);
     return `${multiply * sheetX}% ${multiply * sheetY}%`;
   }
 
-  sanitize(emoji: EmojiData | null): EmojiData | null {
+  public sanitize(emoji: IEmojiData | null): IEmojiData | null {
     if (emoji === null) {
       return null;
     }
@@ -173,10 +173,10 @@ export class EmojiService {
     return { ...emoji };
   }
 
-  getSanitizedData(
-    emoji: string | EmojiData,
-    skin?: Emoji['skin'],
-    set?: Emoji['set'],
+  public getSanitizedData(
+    emoji: string | IEmojiData,
+    skin?: IEmoji["skin"],
+    set?: IEmoji["set"],
   ) {
     return this.sanitize(this.getData(emoji, skin, set));
   }

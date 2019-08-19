@@ -5,112 +5,104 @@ import {
   Input,
   OnInit,
   Output,
-} from '@angular/core';
-
-import { EmojiFrequentlyService } from './emoji-frequently.service';
-import { EmojiCategory } from './data/data.interfaces';
-import { Emoji, EmojiEvent } from './emoji.model';
-import { EmojiService } from './emoji.service';
-import { categories } from './data/categories';
+} from "@angular/core";
+import { categories } from "./data/categories";
+import { IEmojiCategory } from "./data/data.interfaces";
+import { EmojiFrequentlyService } from "./emoji-frequently.service";
+import { IEmoji, IEmojiEvent } from "./emoji.model";
+import { EmojiService } from "./emoji.service";
 
 import * as appSettings from "tns-core-modules/application-settings";
 
-
-
 const I18N: any = {
-  search: 'Search',
-  emojilist: 'List of emoji',
-  notfound: 'No Emoji Found',
-  clear: 'Clear',
   categories: {
-    search: 'Search Results',
-    recent: 'Frequently Used',
-    people: 'Smileys & People',
-    nature: 'Animals & Nature',
-    foods: 'Food & Drink',
-    activity: 'Activity',
-    places: 'Travel & Places',
-    objects: 'Objects',
-    symbols: 'Symbols',
-    flags: 'Flags',
-    custom: 'Custom',
+    activity: "Activity",
+    flags: "Flags",
+    foods: "Food & Drink",
+    nature: "Animals & Nature",
+    objects: "Objects",
+    people: "Smileys & People",
+    places: "Travel & Places",
+    recent: "Frequently Used",
+    search: "Search Results",
+    symbols: "Symbols",
   },
+  clear: "Clear",
+  emojilist: "List of emoji",
+  notfound: "No Emoji Found",
+  search: "Search",
   skintones: {
-    1: 'Default Skin Tone',
-    2: 'Light Skin Tone',
-    3: 'Medium-Light Skin Tone',
-    4: 'Medium Skin Tone',
-    5: 'Medium-Dark Skin Tone',
-    6: 'Dark Skin Tone',
+    1: "Default Skin Tone",
+    2: "Light Skin Tone",
+    3: "Medium-Light Skin Tone",
+    4: "Medium Skin Tone",
+    5: "Medium-Dark Skin Tone",
+    6: "Dark Skin Tone",
   },
 };
 
 @Component({
-  selector: 'emoji-picker',
-  templateUrl: './picker.component.html',
+  selector: "emoji-picker",
   styleUrls: ["./picker.scss"],
+  templateUrl: "./picker.component.html",
+
   changeDetection: ChangeDetectionStrategy.OnPush,
   preserveWhitespaces: false,
 })
 export class PickerComponent implements OnInit {
-  @Input() perLine = 10;
-  @Input() showEmojiPicker: boolean = false;
-  @Input() i18n: any = {};
+  @Input() public perLine = 10;
+  @Input() public showEmojiPicker: boolean = false;
+  @Input() public i18n: any = {};
 
-  @Input() color = '#2b669a';
-  @Input() hideObsolete = true;
+  @Input() public color = "#2b669a";
+  @Input() public hideObsolete = true;
   /** all categories shown */
-  @Input() categories: EmojiCategory[] = [];
+  @Input() public categories: IEmojiCategory[] = [];
   /** used to temporarily draw categories */
-  @Input() activeCategories: EmojiCategory[] = [];
-  @Input() skin: Emoji['skin'] = 1;
-  @Output() emojiClick = new EventEmitter<any>();
-  @Output() backspaceClick = new EventEmitter<any>();
-  @Output() skinChange = new EventEmitter<Emoji['skin']>();
+  @Input() public activeCategories: IEmojiCategory[] = [];
+  @Input() public skin: IEmoji["skin"] = 1;
+  @Output() public emojiClick = new EventEmitter<any>();
+  @Output() public backspaceClick = new EventEmitter<any>();
+  @Output() public skinChange = new EventEmitter<IEmoji["skin"]>();
 
-  recent?: string[];
+  public recent?: string[];
 
-  NAMESPACE = 'emoji-picker';
+  public NAMESPACE = "emoji-picker";
 
-  RECENT_CATEGORY: EmojiCategory = {
-    id: 'recent',
-    name: 'Recent',
+  public RECENT_CATEGORY: IEmojiCategory = {
     emojis: null,
+    id: "recent",
+    name: "Recent",
+
   };
-  showSearch: boolean = false;
+  public showSearch: boolean = false;
   constructor(
     private lastUsedEmojisService: EmojiFrequentlyService,
     private emojiService: EmojiService,
   ) { }
 
-
-
-  ngOnInit() {
+  public ngOnInit() {
 
     this.i18n = { ...I18N, ...this.i18n };
     this.i18n.categories = { ...I18N.categories, ...this.i18n.categories };
     this.skin =
-      JSON.parse(appSettings.getString(`${this.NAMESPACE}.skin`) || 'null') ||
+      JSON.parse(appSettings.getString(`${this.NAMESPACE}.skin`) || "null") ||
       this.skin;
 
-    var recentEmojis: string[] = this.lastUsedEmojisService.get(40);
+    const recentEmojis: string[] = this.lastUsedEmojisService.get(40);
     this.categories.push({ id: "recent", name: "Recent Emojis", emojis: recentEmojis });
     this.categories.push(...categories);
 
   }
 
-
-
-
-
-  handleSearch($emojis: any[] | null) {
+  public handleSearch($emojis: any[] | null) {
 
     /*for (const component of this.categoryRefs.toArray()) {
-      if (component.name === 'Search') {
+      if (component.name === "Search") {
         component.emojis = $emojis;
-        component.updateDisplay($emojis ? 'block' : 'none');
+        component.updateDisplay($emojis ? "block" : "none");
       } else {
-        component.updateDisplay($emojis ? 'none' : 'block');
+        component.updateDisplay($emojis ? "none" : "block");
       }
     }
 
@@ -118,37 +110,34 @@ export class PickerComponent implements OnInit {
     this.handleScroll();*/
   }
 
-
-
-  handleEmojiClick($event: EmojiEvent) {
+  public handleEmojiClick($event: IEmojiEvent) {
     this.emojiClick.emit($event);
 
   }
-  handleSkinChange(skin: Emoji['skin']) {
+  public handleSkinChange(skin: IEmoji["skin"]) {
     this.skin = skin;
     appSettings.setString(`${this.NAMESPACE}.skin`, String(skin));
     this.skinChange.emit(skin);
   }
 
-  getImgSrc(emoji) {
+  public getImgSrc(emoji) {
     if (emoji) {
       return `~/assets/emoji-picker-emojis/${emoji.toLowerCase()}.png`;
     }
 
   }
 
-  onEmojiClick(emoji) {
+  public onEmojiClick(emoji) {
     this.lastUsedEmojisService.add(emoji);
     this.emojiClick.emit(emoji);
   }
 
-  backspace() {
+  public backspace() {
     this.backspaceClick.emit();
   }
 
-  toggleSearch() {
+  public toggleSearch() {
     this.showSearch = !this.showSearch;
   }
-
 
 }

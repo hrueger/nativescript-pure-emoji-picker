@@ -1,0 +1,14 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "no-var-requires": false
+    },
+    "rulesDirectory": [],
+    "linterOptions": {
+        "exclude": ["./lib/src/data/emojis.ts"]
+    }
+}
