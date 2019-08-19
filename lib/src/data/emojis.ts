@@ -1,5 +1,5 @@
-import { CompressedEmojiData } from "./data.interfaces";
-export const emojis: CompressedEmojiData[] = [
+import { ICompressedEmojiData } from "./data.interfaces";
+export const emojis: ICompressedEmojiData[] = [
   {
     name: "Monkey Face",
     unified: "1F435",
