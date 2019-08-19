@@ -98,6 +98,9 @@ export class PickerComponent implements OnInit {
   public changeViewTo(view) {
     alert("Multiple views are not avalible yet");
   }
+  public clearSearch() {
+    //
+  }
 
   public handleSearch($emojis: any[] | null) {
 
