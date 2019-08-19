@@ -1,34 +1,31 @@
-# Your Plugin Name
+# nativescript-emoji-picker
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
+[![Build Status](https://travis-ci.com/hrueger/nativescript-emoji-picker.svg?branch=master)](https://travis-ci.com/hrueger/nativescript-emoji-picker)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Then describe what's the purpose of your plugin. 
+There are many emoji pickers for angular and the web, but no one for NativeScript?! Let's change this!
 
-In case you develop UI plugin, this is where you can add some screenshots.
+As this plugin is currently in developement screenshots will be added later this year.
 
-## (Optional) Prerequisites / Requirements
+## Prerequisites / Requirements
 
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
+ToDo
 
 ## Installation
 
-Describe your plugin installation steps. Ideally it would be something like:
+ToDo
 
 ```javascript
-tns plugin add <your-plugin-name>
+tns plugin add <nativescript-emoji-picker>
 ```
 
 ## Usage 
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
-	
-	```javascript
-    Usage code snippets here
-    ```)
+ToDo
 
 ## API
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
+ToDo
     
 | Property | Default | Description |
 | --- | --- | --- |
@@ -37,4 +34,4 @@ Describe your plugin methods and properties here. See [nativescript-feedback](ht
     
 ## License
 
-Apache License Version 2.0, January 2004
+MIT
