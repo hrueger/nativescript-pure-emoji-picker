@@ -95,6 +95,10 @@ export class PickerComponent implements OnInit {
 
   }
 
+  public changeViewTo(view) {
+    alert("Multiple views are not avalible yet");
+  }
+
   public handleSearch($emojis: any[] | null) {
 
     /*for (const component of this.categoryRefs.toArray()) {
