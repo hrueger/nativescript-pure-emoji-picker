@@ -21,7 +21,7 @@ require("nativescript-angular/forms");
 require("nativescript-angular/router");*/
 
 // Snapshot the ~/app.css and the theme
-import application = require("application");
+import * as application from "application";
 import "ui/styling/style-scope";
 const appCssContext = require.context("~/", false, /^\.\/app\.(css|scss|less|sass)$/);
 global.registerWebpackModules(appCssContext);
