@@ -2,7 +2,7 @@
     "name": "nativescript-emoji-picker",
     "version": "0.1.0",
     "description": "There are many emoji pickers for angular and the web, but no one for NativeScript?! Let's change this!",
-    "license": "See license in LICENSE",
+    "license": "MIT",
     "readme": "See readme in README.md",
     "repository": "https://github.com/hrueger/nativescript-emoji-picker",
     "author": "H. Rüger",
