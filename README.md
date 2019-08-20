@@ -16,8 +16,7 @@ This plugin currently only works in an Angular NativeScript project. Feel free t
 ## Installation
 
 - First copy the the folders in from [here](https://github.com/hrueger/nativescript-emoji-picker/tree/master/app/assets/) to your assets folder (/app/assets/).
-- (Then install the plugin using `tns plugin add nativescript-emoji-picker`)
-**Not yet avalible on npm, coming soon!**
+- Then install the plugin using `tns plugin add nativescript-emoji-picker`
 
 ## Usage 
 
