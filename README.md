@@ -1,15 +1,12 @@
-# nativescript-emoji-picker😃
+# nativescript-pure-emoji-picker😃
 
-[![Build Status](https://travis-ci.org/hrueger/nativescript-emoji-picker.svg?branch=master)](https://travis-ci.org/hrueger/nativescript-emoji-picker) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/hrueger/nativescript-emoji-picker/blob/master/LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/hrueger/nativescript-emoji-picker/graphs/commit-activity) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/hrueger/nativescript-emoji-picker/)
+[![Build Status](https://travis-ci.org/hrueger/nativescript-pure-emoji-picker.svg?branch=master)](https://travis-ci.org/hrueger/nativescript-pure-emoji-picker) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/hrueger/nativescript-pure-emoji-picker/blob/master/LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/hrueger/nativescript-pure-emoji-picker/graphs/commit-activity) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/hrueger/nativescript-pure-emoji-picker/)
 
-There are many emoji pickers for angular and the web, but no one for NativeScript?! Let's change this!
-
-As this plugin is currently in developement screenshots will be added later this year.
+This is an emoji picker - built out of pure nativescript components only!
 
 ## Limitations
 
-- Angular needed
-This plugin currently only works in an Angular NativeScript project. Feel free to clone this repo and port it to JavaScript!
+- Angular needed: This plugin currently only works in an Angular NativeScript project. Feel free to clone this repo and port it to JavaScript!
 - Search not implemented yet
 - Skins not implemented yet
 
