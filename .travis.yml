@@ -5,6 +5,7 @@ env:
 branches:
   only: 
     - master
+    - /^greenkeeper/.*$/
 matrix:
   include:
     - stage: "Lint"
