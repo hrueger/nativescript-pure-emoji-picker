@@ -1,6 +1,6 @@
 # nativescript-pure-emoji-picker😃
 
-[![Build Status](https://travis-ci.org/hrueger/nativescript-pure-emoji-picker.svg?branch=master)](https://travis-ci.org/hrueger/nativescript-pure-emoji-picker) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/hrueger/nativescript-pure-emoji-picker/blob/master/LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/hrueger/nativescript-pure-emoji-picker/graphs/commit-activity) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/hrueger/nativescript-pure-emoji-picker/)
+[![Build Status](https://travis-ci.org/hrueger/nativescript-pure-emoji-picker.svg?branch=master)](https://travis-ci.org/hrueger/nativescript-pure-emoji-picker) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/hrueger/nativescript-pure-emoji-picker/blob/master/LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/hrueger/nativescript-pure-emoji-picker/graphs/commit-activity) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/hrueger/nativescript-pure-emoji-picker/) [![Greenkeeper badge](https://badges.greenkeeper.io/hrueger/nativescript-pure-emoji-picker.svg)](https://greenkeeper.io/)
 
 This is an emoji picker - built out of pure nativescript components only!
 
