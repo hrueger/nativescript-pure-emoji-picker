@@ -1,19 +1,24 @@
 {
-    "name": "nativescript-emoji-picker",
+    "name": "nativescript-pure-emoji-picker",
     "version": "0.1.0",
-    "description": "There are many emoji pickers for angular and the web, but no one for NativeScript?! Let's change this!",
+    "description": "This is an emoji picker for nativescript purly out of nativescript components!",
     "license": "MIT",
     "readme": "See readme in README.md",
-    "repository": "https://github.com/hrueger/nativescript-emoji-picker",
+    "repository": "https://github.com/hrueger/nativescript-pure-emoji-picker",
     "author": "H. Rüger",
     "nativescript": {
-        "id": "com.hrueger.nativescriptemojipicker",
+        "id": "com.hrueger.nativescriptpureemojipicker",
         "tns-ios": {
             "version": "6.0.1"
         },
         "tns-android": {
             "version": "6.0.0"
         }
+    },
+    "greenkeeper": {
+        "ignore": [
+            "typescript"
+        ]
     },
     "scripts": {
         "build": "ng-packagr -p lib/package.json && copy README.md dist && copy LICENSE dist",
@@ -24,30 +29,30 @@
         "tslint": "tslint -p tsconfig.json"
     },
     "dependencies": {
-        "@angular/animations": "~8.1.3",
-        "@angular/common": "~8.1.3",
+        "@angular/animations": "~8.2.13",
+        "@angular/common": "~8.2.13",
         "@angular/compiler": "~8.2.2",
         "@angular/core": "~8.2.2",
         "@angular/forms": "~8.2.2",
         "@angular/http": "~7.2.15",
-        "@angular/platform-browser": "~8.1.3",
+        "@angular/platform-browser": "~8.2.13",
         "@angular/platform-browser-dynamic": "~8.2.2",
-        "@angular/router": "~8.1.0",
-        "nativescript-angular": "~8.1.0",
+        "@angular/router": "~8.2.13",
+        "nativescript-angular": "~8.20.1",
         "nativescript-emoji-picker": "file:./lib/",
         "nativescript-theme-core": "~2.0.5",
-        "nativescript-ui-listview": "7.0.2",
+        "nativescript-ui-listview": "8.0.0",
         "reflect-metadata": "~0.1.13",
         "rxjs": "~6.5.2",
         "tns-core-modules": "^6.0.0",
-        "zone.js": "^0.9.1"
+        "zone.js": "^0.10.2"
     },
     "devDependencies": {
         "@angular/compiler-cli": "^8.0.0",
         "ng-packagr": "^5.5.0",
         "typescript": "3.4.5",
-        "nativescript-dev-webpack": "~1.0.0",
-        "@ngtools/webpack": "8.0.0",
+        "nativescript-dev-webpack": "~1.3.0",
+        "@ngtools/webpack": "8.3.18",
         "tslint": "^5.4.2"
     }
 }
