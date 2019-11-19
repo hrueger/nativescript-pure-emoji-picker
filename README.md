@@ -12,8 +12,8 @@ This is an emoji picker - built out of pure nativescript components only!
 
 ## Installation
 
-- First copy the the folders in from [here](https://github.com/hrueger/nativescript-emoji-picker/tree/master/app/assets/) to your assets folder (/app/assets/).
-- Then install the plugin using `tns plugin add nativescript-emoji-picker`
+- First copy the the folders in from [here](https://github.com/hrueger/nativescript-pure-emoji-picker/tree/master/app/assets/) to your assets folder (/app/assets/).
+- Then install the plugin using `tns plugin add nativescript-pure-emoji-picker`
 
 ## Usage 
 

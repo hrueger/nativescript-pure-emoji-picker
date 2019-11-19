@@ -1,19 +1,24 @@
 {
-    "name": "nativescript-emoji-picker",
+    "name": "nativescript-pure-emoji-picker",
     "version": "0.1.0",
-    "description": "There are many emoji pickers for angular and the web, but no one for NativeScript?! Let's change this!",
+    "description": "This is an emoji picker for nativescript purly out of nativescript components!",
     "license": "MIT",
     "readme": "See readme in README.md",
-    "repository": "https://github.com/hrueger/nativescript-emoji-picker",
+    "repository": "https://github.com/hrueger/nativescript-pure-emoji-picker",
     "author": "H. Rüger",
     "nativescript": {
-        "id": "com.hrueger.nativescriptemojipicker",
+        "id": "com.hrueger.nativescriptpureemojipicker",
         "tns-ios": {
             "version": "6.0.1"
         },
         "tns-android": {
             "version": "6.0.0"
         }
+    },
+    "greenkeeper": {
+        "ignore": [
+            "typescript"
+        ]
     },
     "scripts": {
         "build": "ng-packagr -p lib/package.json && copy README.md dist && copy LICENSE dist",
@@ -45,7 +50,7 @@
     "devDependencies": {
         "@angular/compiler-cli": "^8.0.0",
         "ng-packagr": "^5.5.0",
-        "typescript": "3.7.2",
+        "typescript": "3.4.5",
         "nativescript-dev-webpack": "~1.3.0",
         "@ngtools/webpack": "8.3.18",
         "tslint": "^5.4.2"
