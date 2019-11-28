@@ -44,7 +44,7 @@
         "nativescript-ui-listview": "8.0.0",
         "reflect-metadata": "~0.1.13",
         "rxjs": "~6.5.2",
-        "tns-core-modules": "^6.0.0",
+        "tns-core-modules": "^6.2.3",
         "zone.js": "^0.10.2"
     },
     "devDependencies": {
