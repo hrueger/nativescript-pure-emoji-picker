@@ -53,6 +53,6 @@
         "typescript": "3.5.3",
         "nativescript-dev-webpack": "~1.5.0",
         "@ngtools/webpack": "9.0.5",
-        "tslint": "^5.4.2"
+        "tslint": "^6.0.0"
     }
 }
