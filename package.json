@@ -51,7 +51,7 @@
         "@angular/compiler-cli": "^8.0.0",
         "ng-packagr": "^5.5.0",
         "typescript": "3.5.3",
-        "nativescript-dev-webpack": "~1.5.0",
+        "nativescript-dev-webpack": "~1.5.1",
         "@ngtools/webpack": "9.0.5",
         "tslint": "^5.4.2"
     }
