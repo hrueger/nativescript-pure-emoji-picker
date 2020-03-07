@@ -40,7 +40,7 @@
         "@angular/router": "~8.2.13",
         "nativescript-angular": "~8.20.1",
         "nativescript-emoji-picker": "file:./lib/",
-        "nativescript-theme-core": "~2.0.5",
+        "nativescript-theme-core": "~2.0.24",
         "nativescript-ui-listview": "8.0.1",
         "reflect-metadata": "~0.1.13",
         "rxjs": "~6.5.4",
