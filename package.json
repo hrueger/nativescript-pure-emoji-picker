@@ -43,7 +43,7 @@
         "nativescript-theme-core": "~2.0.5",
         "nativescript-ui-listview": "8.0.1",
         "reflect-metadata": "~0.1.13",
-        "rxjs": "~6.5.2",
+        "rxjs": "~6.5.4",
         "tns-core-modules": "^6.2.3",
         "zone.js": "^0.10.2"
     },
