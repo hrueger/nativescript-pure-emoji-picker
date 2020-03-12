@@ -52,7 +52,7 @@
         "ng-packagr": "^5.5.0",
         "typescript": "3.5.3",
         "nativescript-dev-webpack": "~1.5.1",
-        "@ngtools/webpack": "9.0.5",
+        "@ngtools/webpack": "9.0.6",
         "tslint": "^6.0.0"
     }
 }
