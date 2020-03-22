@@ -50,7 +50,7 @@
     "devDependencies": {
         "@angular/compiler-cli": "^8.2.14",
         "ng-packagr": "^9.0.0",
-        "typescript": "3.8.2",
+        "typescript": "3.8.3",
         "nativescript-dev-webpack": "~1.5.1",
         "@ngtools/webpack": "9.0.7",
         "tslint": "^6.1.0"
